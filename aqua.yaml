@@ -1,0 +1,13 @@
+---
+registries:
+- type: standard
+  refs: v3.31.0 # renovate: depName=aquaproj/aqua-registry
+- name: local
+  type: local
+  path: ./aqua-registry.yml
+packages:
+  - name: protocolbuffers/protobuf-go/protoc-gen-go@v1.28.1
+  - name: protocolbuffers/protobuf@v21.5
+    registry: local
+  - name: github.com/chrusty/protoc-gen-jsonschema/cmd/protoc-gen-jsonschema@1.3.9
+    registry: local

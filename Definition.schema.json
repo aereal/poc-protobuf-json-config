@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$ref": "#/definitions/Definition",
+    "definitions": {
+        "Definition": {
+            "properties": {
+                "livers": {
+                    "additionalProperties": {
+                        "$ref": "#/definitions/config.Liver",
+                        "additionalProperties": true
+                    },
+                    "type": "object"
+                }
+            },
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Definition"
+        },
+        "config.Liver": {
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "age": {
+                    "type": "integer"
+                }
+            },
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Liver"
+        }
+    }
+}
