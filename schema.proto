@@ -3,11 +3,18 @@ package config;
 
 option go_package = "./pb";
 
+import "options.proto";
+
 message Definition {
+  option (protoc.gen.jsonschema.message_options).all_fields_required = true;
+  option (protoc.gen.jsonschema.message_options).disallow_additional_properties = true;
+
   map<string, Liver> livers = 1;
 }
 
 message Liver {
-  string name = 1;
+  option (protoc.gen.jsonschema.message_options).disallow_additional_properties = true;
+
+  string name = 1 [(protoc.gen.jsonschema.field_options).required = true];
   optional int32 age = 2;
 }

@@ -3,6 +3,9 @@
     "$ref": "#/definitions/Definition",
     "definitions": {
         "Definition": {
+            "required": [
+                "livers"
+            ],
             "properties": {
                 "livers": {
                     "additionalProperties": {
@@ -12,11 +15,14 @@
                     "type": "object"
                 }
             },
-            "additionalProperties": true,
+            "additionalProperties": false,
             "type": "object",
             "title": "Definition"
         },
         "config.Liver": {
+            "required": [
+                "name"
+            ],
             "properties": {
                 "name": {
                     "type": "string"
@@ -25,7 +31,7 @@
                     "type": "integer"
                 }
             },
-            "additionalProperties": true,
+            "additionalProperties": false,
             "type": "object",
             "title": "Liver"
         }

@@ -3,6 +3,9 @@
     "$ref": "#/definitions/Liver",
     "definitions": {
         "Liver": {
+            "required": [
+                "name"
+            ],
             "properties": {
                 "name": {
                     "type": "string"
@@ -11,7 +14,7 @@
                     "type": "integer"
                 }
             },
-            "additionalProperties": true,
+            "additionalProperties": false,
             "type": "object",
             "title": "Liver"
         }
