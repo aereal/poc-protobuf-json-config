@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -eo pipefail
+
+root_dir="$(readlink -f $(dirname $0)/..)"
+proto_dir="$(go list -f '{{ .Dir }}' -m github.com/chrusty/protoc-gen-jsonschema)"
+
+exec protoc \
+  --proto_path="$root_dir" \
+  --proto_path="$proto_dir" \
+  --plugin=protoc-gen-jsonschema="$root_dir/_tools/protoc-gen-jsonschema-wrapper" \
+  --jsonschema_out=enums_as_strings_only,file_extension=schema.json:"$root_dir" \
+  --go_out="$root_dir" \
+  "$root_dir/schema.proto"
